@@ -22,11 +22,11 @@ CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
 #########################################
 
-COPY check_service.sh .
+COPY ./check_service.sh .
 
 RUN chmod 755 check_service.sh
 
-CMD [ "./check_service.sh" ] 
+#RUN ./check_service.sh
 
 # Install Jetty
 #COPY ./jetty/ jetty/

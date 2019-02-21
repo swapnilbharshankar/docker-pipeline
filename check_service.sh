@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 function checkIt()
 {
@@ -13,4 +13,4 @@ function checkIt()
 }
 
 checkIt "httpd" > test_result.txt;
-checkIt "mysql" > test_result.txt;
+checkIt "mysql" >> test_result.txt;
