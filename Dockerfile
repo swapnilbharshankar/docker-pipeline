@@ -24,7 +24,9 @@ CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
 COPY check_service.sh .
 
-RUN sh check_service.sh > test_result.txt
+RUN chmod 755 check_service.sh
+
+CMD [ "check_service.sh" ] 
 
 # Install Jetty
 #COPY ./jetty/ jetty/
