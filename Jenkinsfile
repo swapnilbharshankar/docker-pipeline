@@ -11,5 +11,5 @@ node('docker'){
         echo "Container ID is ====>  $containerID" 
     stage 'Result'
         sh "docker cp ${containerID}:/var/www/html/test_result.txt test_result.txt"
-        cat test_result.txt
+        sh 'cat test_result.txt'
 }
