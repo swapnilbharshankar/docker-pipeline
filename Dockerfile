@@ -22,6 +22,10 @@ CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
 #########################################
 
+COPY check_service.sh .
+
+RUN sh check_service.sh > test_result.txt
+
 # Install Jetty
 #COPY ./jetty/ jetty/
 
