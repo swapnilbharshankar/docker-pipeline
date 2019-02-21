@@ -1,4 +1,5 @@
 #! /bin/bash
+
 function checkIt()
 {
  ps auxw | grep $1 | grep -v grep > /dev/null
