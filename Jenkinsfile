@@ -7,6 +7,9 @@ node('docker'){
         containerID = sh (
             script: "docker run -d -p 80:80 swapnil_test:${BUILD_NUMBER}",
             returnStdout: true
-        )
+        ).trim()
         echo "Container ID is ====>  $containerID" 
+    stage 'Result'
+        sh "docker cp ${containerID}:test_result.txt test_result.txt"
+        cat test_result.txt
 }
