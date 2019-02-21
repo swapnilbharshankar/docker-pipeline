@@ -10,6 +10,6 @@ node('docker'){
         ).trim()
         echo "Container ID is ====>  $containerID" 
     stage 'Result'
-        sh "docker cp ${containerID}:/test_result.txt test_result.txt"
+        sh "docker cp ${containerID}:/var/www/html/test_result.txt test_result.txt"
         cat test_result.txt
 }
